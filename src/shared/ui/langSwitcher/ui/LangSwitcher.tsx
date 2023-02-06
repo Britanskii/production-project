@@ -1,4 +1,3 @@
-import s from "./langSwitcher.module.sass"
 
 import { FC } from "react"
 import { useTranslation } from "react-i18next"
@@ -19,7 +18,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
 	}
 
 	return (
-		<Button className={classNames(s.langSwitcher)}
+		<Button className={""}
 			theme={ThemeButton.CLEAR}
 			onClick={toggle}>
 			{t("Язык")}

@@ -8,13 +8,14 @@ import { Sidebar } from "widgets/sidebar"
 import { Suspense } from "react"
 
 const App = () => {
+
 	const { theme } = useTheme()
 
 	return (
-		<div className={classNames("app", {}, [theme])}>
-			<Suspense fallback={"Loading..."}>
+		<div className={classNames(["app", theme])}>
+			<Suspense fallback={""}>
 				<Navbar/>
-				<div className="content-page">
+				<div className="contentPage">
 					<Sidebar/>
 					<AppRouter/>
 				</div>

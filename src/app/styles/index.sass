@@ -1,19 +1,17 @@
-@import "reset"
-@import "./src/app/styles/variables/globals"
-@import "./src/app/styles/themes/normal"
-@import "./src/app/styles/themes/dark"
+@use "reset"
+@use "./variables/globals"
+@use "./themes/normal"
+@use "./themes/dark"
 
 .app
     font: var(--font-m)
-
     background: var(--bg-color)
     color: var(--primary-color)
-
     min-height: 100vh
 
-.content-page
+.contentPage
     display: flex
 
-.page-wrapper
+.pageWrapper
     flex-grow: 1
     padding: 20rem
