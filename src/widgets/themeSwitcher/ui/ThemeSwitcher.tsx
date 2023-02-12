@@ -21,3 +21,4 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
 		</Button>
 	)
 }
+

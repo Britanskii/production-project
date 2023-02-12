@@ -13,12 +13,12 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
 
 	const { t, i18n } = useTranslation()
 
-	const toggle = () => {
-		i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru")
+	const toggle = async () => {
+		await i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru")
 	}
 
 	return (
-		<Button className={""}
+		<Button className={classNames([className])}
 			theme={ThemeButton.CLEAR}
 			onClick={toggle}>
 			{t("Язык")}

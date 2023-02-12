@@ -2,6 +2,7 @@ import HTMLWebpackPlugin from "html-webpack-plugin"
 import webpack from "webpack"
 import { BuildOptions } from "./types/config"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 
 const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] => {
 	return [
@@ -15,6 +16,9 @@ const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInst
 		}),
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev)
+		}),
+		new BundleAnalyzerPlugin({
+			openAnalyzer: false
 		})
 	]
 }
