@@ -12,9 +12,7 @@
         "selector-type-no-unknown": [
             true,
             {
-                "ignore": [
-                    "\\:root"
-                ]
+                "ignore": ["default-namespace"]
             }
         ]
     }
