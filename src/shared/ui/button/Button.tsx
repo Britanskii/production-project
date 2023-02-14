@@ -5,12 +5,13 @@ import { ButtonHTMLAttributes, FC } from "react"
 import { classNames } from "shared/lib/classNames/classNames"
 
 export enum ThemeButton {
-    CLEAR = "clear"
+	CLEAR = "clear",
+	OUTLINE = "outline"
 }
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
-    className?: string,
-    theme?: ThemeButton
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+	className?: string,
+	theme?: ThemeButton
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -20,7 +21,7 @@ export const Button: FC<ButtonProps> = (props) => {
 		<button
 			type={"button"}
 			{...otherProps}
-			className = {classNames([s.button, className, s[theme]])}>
+			className={classNames([s.button, className, s[theme]])}>
 			{children}
 		</button>
 	)
