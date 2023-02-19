@@ -2,7 +2,7 @@ import React from "react"
 import {  cleanup, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 import { Sidebar } from "./Sidebar"
-import { renderWithTranslation } from "shared/lib"
+import { renderWithTranslation } from "shared/lib/tests/renderWithTranslation"
 
 afterEach(cleanup)
 
