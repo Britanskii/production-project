@@ -19,9 +19,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export enum ButtonSize {
-	M = "size_m",
-	L = "size_l",
-	XL = "size_xl"
+	M = "medium",
+	L = "large",
+	XL = "extraLarge"
 }
 
 export const Button: FC<ButtonProps> = (props) => {
