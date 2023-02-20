@@ -7,6 +7,11 @@
 
 .collapsed
     width: var(--side-bar-width-collapsed)
+    .switchers
+        flex-direction: column
+    .link
+        opacity: 0
+        width: 0
 
 .switchers
     position: absolute
@@ -15,3 +20,26 @@
     justify-content: center
     width: 100%
     gap: 15rem
+
+.button
+    position: absolute
+    right: -32rem
+    bottom: 32rem
+
+.items
+    padding: 20rem
+    display: flex
+    flex-direction: column
+    gap: 10rem
+
+.item
+    display: flex
+    align-items: center
+    gap: 10rem
+
+.icon
+    fill: var(--inverted-primary-color)
+
+.link
+    opacity: 1
+    transition: .3s opacity ease
