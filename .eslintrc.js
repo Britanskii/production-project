@@ -16,6 +16,7 @@ module.exports = {
 		"sourceType": "module"
 	},
 	"plugins": ["react", "@typescript-eslint", "i18next"],
+	"ignorePatterns": ["scripts"],
 	"rules": {
 		"i18next/no-literal-string": ["error", {
 			markupOnly: true,
