@@ -1,13 +1,16 @@
 @use "reset"
 @use "./variables/globals"
-@use "./themes/normal"
+@use "./themes/light"
 @use "./themes/dark"
 
-.app
+body
     font: var(--font-m)
-    background: var(--bg-color)
     color: var(--primary-color)
+
+.app
     min-height: 100vh
+    background: var(--bg-color)
+
 
 .contentPage
     display: flex

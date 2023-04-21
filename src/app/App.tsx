@@ -8,7 +8,6 @@ import { Sidebar } from "widgets/sidebar"
 import { Suspense } from "react"
 
 const App = () => {
-
 	const { theme } = useTheme()
 
 	return (
