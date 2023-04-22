@@ -4,6 +4,7 @@ import { FC, ReactNode, MouseEvent, useState, useRef, useEffect } from "react"
 
 import { classNames } from "shared/lib/classNames/classNames"
 import { Portal } from "shared/ui/portal/Portal"
+import { useTheme } from "shared/context"
 
 interface ModalProps {
     className?: string
@@ -18,6 +19,8 @@ export const Modal: FC<ModalProps> = (props) => {
 	const { children, isOpen, onClose, className = "" } = props
 
 	const [isClosing, setIsClosing] = useState(false)
+
+	const { theme } = useTheme()
 
 	const timeRef = useRef<ReturnType<typeof setTimeout>>()
 
@@ -59,7 +62,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
 	return (
 		<Portal>
-			<div className = {classNames([s.modal, className], mods)}>
+			<div className = {classNames([s.modal, theme, className], mods)}>
 				<div className={s.overlay} onClick={closeHandler}>
 					<div className={s.content} onClick={onContentClick}>
 						{children}
