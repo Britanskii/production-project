@@ -15,8 +15,8 @@ export default {
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />
 
-export const Default = Template.bind({})
-Default.args = {
+export const Light = Template.bind({})
+Light.args = {
 	isOpen: true,
 	children: "Модальное Окно"
 }
