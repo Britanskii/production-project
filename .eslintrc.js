@@ -16,8 +16,9 @@ module.exports = {
 		"sourceType": "module"
 	},
 	"plugins": ["react", "@typescript-eslint", "i18next"],
-	"ignorePatterns": ["scripts"],
+	"ignorePatterns": ["scripts", "jsonServer"],
 	"rules": {
+		"react/prop-types": [0],
 		"i18next/no-literal-string": ["error", {
 			markupOnly: true,
 			ignoreAttribute: ["data-testid", "to"]
