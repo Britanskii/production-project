@@ -16,6 +16,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
 	}
 
 	static getDerivedStateFromError(error: Error) {
+		console.error(error)
 		return { hasError: true }
 	}
 

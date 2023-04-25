@@ -51,11 +51,6 @@ export const Modal: FC<ModalProps> = (props) => {
 	useEffect(() => {
 		if (isOpen) {
 			setIsMounted(true)
-		}
-	}, [isOpen])
-
-	useEffect(() => {
-		if (isOpen) {
 			window.addEventListener("keydown", onKeyDown)
 		}
 
@@ -63,7 +58,7 @@ export const Modal: FC<ModalProps> = (props) => {
 			clearTimeout(timeRef.current)
 			window.removeEventListener("keydown", onKeyDown)
 		}
-	}, [])
+	}, [isOpen])
 
 	if (lazy && !isMounted) {
 		return null

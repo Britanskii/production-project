@@ -7,21 +7,34 @@ import { useTranslation } from "react-i18next"
 import { Button, ButtonTheme } from "shared/ui"
 import { Input } from "shared/ui/input/Input"
 import { useDispatch, useSelector } from "react-redux"
-import { loginActions } from "../../model/slice/loginSlice"
-import { getLoginState } from "entities/user/model/selectors/getLoginState/getLoginState"
+import { loginActions, loginReducer } from "../../model/slice/loginSlice"
 import { loginByUsername } from "../../model/services/loginByUsername"
 import { Text, TextTheme } from "shared/ui/text/Text"
+import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername"
+import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword"
+import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading"
+import { getLoginError } from "../../model/selectors/getLoginError/getLoginError"
+import { ReducersList, useDynamicReducer } from "shared/lib/useDynamicReducer/useDynamicReducer"
 
 interface LoginFormProps {
 	className?: string
 }
 
-export const LoginForm: FC<LoginFormProps> = (props) => {
+const initialReducers: ReducersList = {
+	login: loginReducer
+}
+
+const LoginForm: FC<LoginFormProps> = (props) => {
 	const { className = "" } = props
 
 	const { t } = useTranslation()
 	const dispatch = useDispatch()
-	const { username, password, isLoading, error } = useSelector(getLoginState)
+	const username = useSelector(getLoginUsername)
+	const password = useSelector(getLoginPassword)
+	const isLoading = useSelector(getLoginIsLoading)
+	const error = useSelector(getLoginError)
+
+	useDynamicReducer(initialReducers)
 
 	const onChangeUsername = useCallback((value: string) => {
 		dispatch(loginActions.setUsername(value))
@@ -49,3 +62,5 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
 		</form>
 	)
 }
+
+export default LoginForm
